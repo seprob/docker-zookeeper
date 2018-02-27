@@ -1,4 +1,4 @@
-OM java:alpine
+FROM java:alpine
 
 MAINTAINER Bartlomiej "seprob" Korpala (seprob@poczta.fm)
 
