@@ -10,10 +10,10 @@ COPY docker-entrypoint.sh /tmp/
 
 RUN chmod +x /tmp/docker-entrypoint.sh
 
-RUN mkdir -p /opt/Kafka && wget http://ftp.man.poznan.pl/apache/kafka/1.0.0/kafka_2.12-1.0.0.tgz -P /tmp && tar -xvf /tmp/kafka_2.12-1.0.0.tgz -C /opt/Kafka
+RUN mkdir /opt && wget http://ftp.man.poznan.pl/apache/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz -P /tmp && tar -xvf /tmp/zookeeper-3.4.11.tar.gz -C /opt
 
 ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
 
-CMD ["/opt/Kafka/kafka_2.12-1.0.0/bin/zookeeper-server-start.sh", "/opt/Kafka/kafka_2.12-1.0.0/config/zookeeper.properties"]
+CMD ["/opt/zookeeper-3.4.11/bin/zkServer.sh", "start-foreground"]
 
 EXPOSE 2181

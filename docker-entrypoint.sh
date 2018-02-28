@@ -2,8 +2,8 @@
 
 set -e
 
-echo "clientPort=$ZOOKEEPER_PORT" > /opt/Kafka/kafka_2.12-1.0.0/config/zookeeper.properties 
+echo "clientPort=$ZOOKEEPER_PORT" > /opt/zookeeper-3.4.11/conf/zoo.cfg
 
-echo "dataDir=/tmp/zookeeper" >> /opt/Kafka/kafka_2.12-1.0.0/config/zookeeper.properties
+echo "dataDir=/var/lib/zookeeper" >> /opt/zookeeper-3.4.11/conf/zoo.cfg
 
 exec "$@"
